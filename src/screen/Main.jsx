@@ -144,7 +144,7 @@ const Main = ({ setMode, checkMode }) => {
     });
   };
 
-  const data = ["/1.jpg", "/2.jpg", "/3.jpeg", "/4.jpg"];
+  const data = ["/3.jpeg", "/1.jpg", "/2.jpg", "/4.jpg"];
   const data2 = ["/5.jpg", "/6.jpg", "/7.jpg", "/8.jpeg"];
   const dataWeb = ["/3web.jpg", "/1web.jpeg", "/2web.jpg", "/4web.jpg"];
   const dataWeb2 = ["/5web.jpeg", "/6web.jpg", "/7web.jpg", "/8web.jpg"];
@@ -255,23 +255,43 @@ const Main = ({ setMode, checkMode }) => {
               autoplayDelay={1000}
               className={` w-full  flex  ${success | loading && "!-z-10"} `}
             >
-              {mode === "ar"
-                ? data.map((imgSrc) => (
-                    <SwiperSlide className="w-full flex md:h-96">
-                      <img
-                        src={imgSrc}
-                        className={`w-full text-center imgHeight h-fit  `}
-                      />{" "}
-                    </SwiperSlide>
-                  ))
-                : dataWeb.map((imgSrc) => (
-                    <SwiperSlide className="w-full flex md:h-96">
-                      <img
-                        src={imgSrc}
-                        className={`w-full text-center imgHeight h-fit  `}
-                      />{" "}
-                    </SwiperSlide>
-                  ))}
+              {mode === "ar" ? (
+                <>
+                  <SwiperSlide className="w-full flex md:h-96">
+                    <img
+                      src="/3.jpeg"
+                      className={`w-full text-center imgHeight h-fit  `}
+                    />{" "}
+                  </SwiperSlide>
+                  <SwiperSlide className="w-full flex md:h-96">
+                    <img
+                      src="/2.jpg"
+                      className={`w-full text-center imgHeight h-fit  `}
+                    />{" "}
+                  </SwiperSlide>
+                  <SwiperSlide className="w-full flex md:h-96">
+                    <img
+                      src="/1.jpg"
+                      className={`w-full text-center imgHeight h-fit  `}
+                    />{" "}
+                  </SwiperSlide>
+                  <SwiperSlide className="w-full flex md:h-96">
+                    <img
+                      src="/4.jpg"
+                      className={`w-full text-center imgHeight h-fit  `}
+                    />{" "}
+                  </SwiperSlide>
+                </>
+              ) : (
+                dataWeb.map((imgSrc) => (
+                  <SwiperSlide className="w-full flex md:h-96">
+                    <img
+                      src={imgSrc}
+                      className={`w-full text-center imgHeight h-fit  `}
+                    />{" "}
+                  </SwiperSlide>
+                ))
+              )}
             </Swiper>
           </div>
           <div className="md:flex hidden w-full">
