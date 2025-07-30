@@ -18,12 +18,12 @@ const Order = ({checkMode,mode,setMode}) => {
                     <BsBookHalf className='text-lg text-green-500'/>
                     <span className=' text-sm  ' >{(checkMode('Online Paymnet','الدفع الالكتروني' )).word} </span>
                 </div>
-                <div className='flex flex-col py-2 px-5 items-center justify-center'>
+                <div className='flex flex-col py-2 px-10 items-center justify-center'>
                     <span className='text-xs text-green-600 my-3'>{checkMode('You have a fee transaction with the Traffic Department worth 30 SAR. Pay the amount and confirm the reservation through the banking application','لديك معاملة رسوم لدى قسم المرور بقيمة 30 ر.س قم بتسديد المبلغ وتاكيد الحجز عبر التطبيق البنكي').word}</span>
                     <div className='w-full grid grid-cols-2 py-5 gap-y-10 gap-x-3' dir='rtl'>
                         {banks.map((bank,i)=>(
                               <div className='w-full flex items-center justify-center '>
-                                <img src={bank.img} alt='bankImg' className='w-48  h-16 cursor-pointer' onClick={()=>navigate(`/payment?data=${data}&type=${bank.name}`)}/> 
+                                <img src={bank.img} alt='bankImg' className='w-48 p-2  h-16 cursor-pointer' onClick={()=>navigate(`/payment?data=${data}&type=${bank.name}`)}/> 
                               </div>
                         ))}
                       

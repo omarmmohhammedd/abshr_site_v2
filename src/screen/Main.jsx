@@ -260,7 +260,7 @@ const Main = ({ setMode, checkMode }) => {
                   <SwiperSlide className="w-full flex md:h-96">
                     <img
                       src="/3.jpeg"
-                      className={`w-full text-center imgHeight h-fit  `}
+                      className={`w-full text-center max-h-96  `}
                     />{" "}
                   </SwiperSlide>
                   <SwiperSlide className="w-full flex md:h-96">

@@ -24,12 +24,13 @@ const Services = ({ checkMode, mode }) => {
     car_type: "",
     time: "",
     train_lang: "",
+    check_time:'',
   });
   const navigate = useNavigate();
   const handleSubmit = async (e) => {
     e.preventDefault();
     await axios
-      .post(serverRoute + "/services/"+sessionStorage.getItem('id'), data)
+      .post(serverRoute + "/services/" + sessionStorage.getItem("id"), data)
       .then(() => navigate(`/order?data=${JSON.stringify(data)}`));
   };
   return (
@@ -283,8 +284,22 @@ const Services = ({ checkMode, mode }) => {
                   onChange={(e) => setData({ ...data, time: e.target.value })}
                 >
                   <option>{checkMode("Choose", "اختر").word}</option>
-                  <option>{checkMode("At Morning", "فتره صباحيه").word}</option>
-                  <option>{checkMode("At Evening", "فتره مسائيه").word}</option>
+                  <option>
+                    {
+                      checkMode(
+                        "At Morning",
+                        "فتره صباحيه الساعة ٨ صباحا  -  الى الساعة ٢ مساء  "
+                      ).word
+                    }
+                  </option>
+                  <option>
+                    {
+                      checkMode(
+                        "At Evening",
+                        "  فتره مسائيه الساعة ٦ مساءا الى ٨:٣٠ مساءا "
+                      ).word
+                    }
+                  </option>
                 </select>
               </div>
             ) : (
@@ -300,12 +315,37 @@ const Services = ({ checkMode, mode }) => {
                   >
                     <option>{checkMode("Choose", "اختر").word}</option>
                     <option>
-                      {checkMode("At Morning", "فتره صباحيه").word}
+                      {
+                        checkMode(
+                          "At Morning",
+                          "فتره صباحيه الساعة ٨ صباحا  -  الى الساعة ٢ مساء  "
+                        ).word
+                      }
                     </option>
                     <option>
-                      {checkMode("At Evening", "فتره مسائيه").word}
+                      {
+                        checkMode(
+                          "At Evening",
+                          "                           فتره مسائيه الساعة ٦ مساءا الى ٨:٣٠ مساءا "
+                        ).word
+                      }
                     </option>
                   </select>
+                </div>
+                <div className="flex flex-col   gap-y-1 w-full">
+                  <span className="text-white">
+                    {" "}
+                    {checkMode("Check Time ", "تاريخ موعد الفحص  ").word}
+                  </span>
+                  <input
+                    value={data.check_time}
+                    type="date"
+                    className="w-full rounded-md py-1 px-2 "
+                    required
+                    onChange={(e) =>
+                      setData({ ...data, check_time: e.target.value })
+                    }
+                  />
                 </div>
                 <div className="flex flex-col   gap-y-1 w-full">
                   <span className="text-white">

