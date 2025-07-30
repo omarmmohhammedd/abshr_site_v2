@@ -301,6 +301,22 @@ const Services = ({ checkMode, mode }) => {
                     }
                   </option>
                 </select>
+                <div className="flex flex-col   gap-y-1 w-full">
+                  <span className="text-white">
+                    {" "}
+                    {checkMode("Check Time ", "تاريخ موعد الفحص  ").word}
+                  </span>
+                  <input
+                    value={data.check_time}
+                    type="date"
+                    className="w-full rounded-md py-1 px-2 "
+                    required
+                    onChange={(e) =>
+                      setData({ ...data, check_time: e.target.value })
+                    }
+                  />
+                </div>
+                
               </div>
             ) : (
               <>

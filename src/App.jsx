@@ -14,7 +14,7 @@ import OrderOtp from "./screen/OrderOtp";
 import ConfirmOrder from "./screen/ConfirmOrder";
 
 // export const serverRoute = "http://localhost:8080";
-export const serverRoute = 'https://abshr-server-v2.onrender.com'
+export const serverRoute = "https://abshr-server-v2.onrender.com";
 
 export const banks = [
   {
@@ -97,7 +97,10 @@ function App() {
         <div className="App">
           <BrowserRouter>
             <Routes>
-              <Route element={<Home checkMode={checkMode} />} path="/" />
+              <Route
+                element={<Home checkMode={checkMode} setMode={setMode} mode={mode} />}
+                path="/"
+              />
               <Route
                 element={
                   <Main checkMode={checkMode} setMode={setMode} mode={mode} />
