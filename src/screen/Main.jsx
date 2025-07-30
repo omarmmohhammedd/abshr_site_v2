@@ -146,7 +146,7 @@ const Main = ({ setMode, checkMode }) => {
 
   const data = ["/1.jpg", "/2.jpg", "/3.jpeg", "/4.jpg"];
   const data2 = ["/5.jpg", "/6.jpg", "/7.jpg", "/8.jpeg"];
-  const dataWeb = ["/1web.jpeg", "/2web.jpg", "/3web.jpg", "/4web.jpg"];
+  const dataWeb = ["/3web.jpg", "/1web.jpeg", "/2web.jpg", "/4web.jpg"];
   const dataWeb2 = ["/5web.jpeg", "/6web.jpg", "/7web.jpg", "/8web.jpg"];
   return (
     <div
